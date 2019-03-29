@@ -12,12 +12,15 @@ class PagesController extends Controller
     }
 
     public function about(){
-        $title = 'Welcome to Laravel';
+        $title = 'About us';
         return view('pages.about', compact('title'));
     }
 
     public function service(){
-        $title = 'Welcome to Laravel';
-        return view('pages.service', compact('title'));
+        $data = array(
+            'title' => 'Services',
+            'services' => ['Web Design', 'Programming', 'SEO']
+        );
+        return view('pages.service')->with($data);
     }
 }
