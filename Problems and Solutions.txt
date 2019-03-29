@@ -6,3 +6,9 @@ C:\Windows\System32\drivers\etc
 
 2. Atom Laravel Syntax
 https://www.youtube.com/watch?v=1i3XD6Rdl4Q
+
+3. To use boostarp, we need to install npm to have the dependecy
+recompile npm run development
+
+4. exit git diff 
+Pree Q
