@@ -15,10 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/hello', function() {
-    return 'Hello, welcome to my website';
+Route::get('/about', function() {
+    return view('pages.about');
 });
+
+// Route::get('/users/{id}/{name}', function($id, $name) {
+//     return "This is user " .$name. ' with an id '.$id;
+// });
