@@ -11,13 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PagesController@index');
 
-Route::get('/about', function() {
-    return view('pages.about');
-});
+Route::get('/about', 'PagesController@about');
+
+Route::get('/service', 'PagesController@service');
 
 // Route::get('/users/{id}/{name}', function($id, $name) {
 //     return "This is user " .$name. ' with an id '.$id;

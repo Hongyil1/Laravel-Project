@@ -11,6 +11,6 @@
     </head>
     <body>
         <h1>Welcome to Laravel</h1>
-        <p>This is About Page</p>
+        <p>This is the Laravel application from the Youtube</p>
     </body>
 </html>
