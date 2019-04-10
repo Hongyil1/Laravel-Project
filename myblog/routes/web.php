@@ -17,6 +17,4 @@ Route::get('/about', 'PagesController@about');
 
 Route::get('/service', 'PagesController@service');
 
-// Route::get('/users/{id}/{name}', function($id, $name) {
-//     return "This is user " .$name. ' with an id '.$id;
-// });
+Route::resource('/posts', 'PostController');

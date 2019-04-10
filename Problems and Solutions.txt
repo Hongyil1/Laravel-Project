@@ -12,3 +12,11 @@ recompile npm run development
 
 4. exit git diff 
 Pree Q
+
+5. Cannot access the MySQL in XAMPP
+change .env file in Laravel, and match the user name and pass word with the one in PhPAdmin. And run the 
+php artisan migrate
+
+6.SQLSTATE[HY000] [1045] Access denied for user 'homestead'@'localhost' (using password: YES) , cannot use Post::all() function from Laravel model
+https://stackoverflow.com/questions/29756194/access-denied-for-user-homesteadlocalhost-using-password-yes
+caching-issue: restart the sever and xampp
