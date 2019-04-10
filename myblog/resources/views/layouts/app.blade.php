@@ -3,14 +3,15 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{ config('app.name', 'MyBlog') }}</title>
         <!-- Fonts -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <!-- Styles -->
-        <style></style>
+        <title>{{ config('app.name', 'MyBlog') }}</title>
     </head>
     <body>
-      @include('inc.navbar')
+      <div class="">
+          @include('inc.navbar')
+      </div>
       <div class="container">
           @yield('content')
       </div>
