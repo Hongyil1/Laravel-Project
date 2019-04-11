@@ -26,3 +26,5 @@ php artisan --version
 
 8.Class 'Collective\Html\HtmlServiceProvider' not found
 composer require laravelcollective/html install in your app file, for example, myblog.
+
+
