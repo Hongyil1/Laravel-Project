@@ -20,3 +20,9 @@ php artisan migrate
 6.SQLSTATE[HY000] [1045] Access denied for user 'homestead'@'localhost' (using password: YES) , cannot use Post::all() function from Laravel model
 https://stackoverflow.com/questions/29756194/access-denied-for-user-homesteadlocalhost-using-password-yes
 caching-issue: restart the sever and xampp
+
+7. get laravel version
+php artisan --version
+
+8.Class 'Collective\Html\HtmlServiceProvider' not found
+composer require laravelcollective/html install in your app file, for example, myblog.
