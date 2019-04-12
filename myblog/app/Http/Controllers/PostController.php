@@ -8,6 +8,17 @@ use DB;
 
 class PostController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {   // except to ensure only the login user can edit and delete
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -44,6 +55,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        // Set the validation rules. title and body is required.
         $this->validate($request, [
             'title'=> 'required',
             'body'=> 'required'
@@ -52,6 +64,8 @@ class PostController extends Controller
         $post = new Post;
         $post->title = $request->input('title');
         $post->body = $request->input('body');
+        // Get the currently authenticated user...
+        $post->user_id = auth()->user()->id;
         $post->save();
 
         return redirect('/posts')->with('success', 'Post Created');
@@ -80,6 +94,12 @@ class PostController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
+
+        // Check for correct use
+        if(auth()->user()->id !== $post->user_id){
+          return redirect('/posts')->with('error', 'Unauthorized Pages');
+        }
+
         return view('posts.edit')->with('post', $post);
     }
 
@@ -109,6 +129,12 @@ class PostController extends Controller
     public function destroy($id)
     {
       $post = Post::find($id);
+
+      // Check for correct use
+      if(auth()->user()->id !== $post->user_id){
+        return redirect('/posts')->with('error', 'Unauthorized Pages');
+      }
+      
       $post->delete();
       return redirect('/posts')->with('success', 'Post Romoved');
     }
